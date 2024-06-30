@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "d06c6819-5204-46e2-914a-aaf572d4ef5b",
+		"name": "Subject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3802039"
+	},
+	"item": [
+		{
+			"name": "Positive",
+			"item": [
+				{
+					"name": "View List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/subjects/selection",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"subjects",
+								"selection"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

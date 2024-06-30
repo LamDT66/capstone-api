@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "197f6115-1b91-461f-88e3-dcd4565cffc1",
+		"name": "Subject Milestone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23719170"
+	},
+	"item": [
+		{
+			"name": "Positive",
+			"item": [
+				{
+					"name": "Get Subject Milestone",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2dWhhaWFuaEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfVEVBQ0hFUiIsImV4cCI6MTY5MTA3NDMyNn0.4NFanlMDkoATxs5K5ILcVp_gTkCcFgQIsUTpLLtchZf8wSyeLXNcxk0bZcyNwd636yUvgOcqsjh-ZLrkbO7fUA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/subject-milestones/1",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"subject-milestones",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Subject Milestone",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2dWhhaWFuaEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfVEVBQ0hFUiIsImV4cCI6MTY5MTA3OTQyOH0.DrlRVZPW81YmAeG_GUYO3sMpkIVMCvl8yfqSNUKyZcv90CrG4vCfG55AFiNWakO-9MOxtcdggIVPWoOXvTIF0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"title\": \"abc\",\r\n        \"step\": 3,\r\n        \"duration\": 15\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/subject-milestones/4",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"subject-milestones",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Subject Milestone",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2dWhhaWFuaEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfVEVBQ0hFUiIsImV4cCI6MTY5MTA3OTQyOH0.DrlRVZPW81YmAeG_GUYO3sMpkIVMCvl8yfqSNUKyZcv90CrG4vCfG55AFiNWakO-9MOxtcdggIVPWoOXvTIF0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"title\": \"xxxx\",\r\n        \"step\": 2,\r\n        \"duration\": 15\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/subject-milestones/21/subject/4",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"subject-milestones",
+								"21",
+								"subject",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Subject Milestone",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2dWhhaWFuaEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfU1RVREVOVCIsImV4cCI6MTY5MDAwNjg2N30._CuvQeOC5BBJ9-nqynPKVk8_MzSmRbN2BFgBk0X3eTO-qqsCH50jvga714ejSCQP0uILFXk9s6iXwXDuji1x4Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/subject-milestones/21",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"subject-milestones",
+								"21"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Negative",
+			"item": []
+		}
+	]
+}

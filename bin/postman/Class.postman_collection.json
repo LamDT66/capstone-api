@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "4ac5e221-c129-44bc-a3e2-2c55feb0d9fd",
+		"name": "Class",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26803583",
+		"_collection_link": "https://bold-station-475313.postman.co/workspace/CPMS~86a07866-592e-4d1c-b45f-82b483043072/collection/26803583-4ac5e221-c129-44bc-a3e2-2c55feb0d9fd?action=share&creator=26803583&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Positive",
+			"item": [
+				{
+					"name": "Get By ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW1kdC5pbmZvQGdtYWlsLmNvbSIsImF1dGhvcml0aWVzIjoiUk9MRV9NQU5BR0VSIiwiZXhwIjoxNjg4ODc1MzUzfQ.kIzNuLgzpEgLmbGsE-F1Q6sTVfbXd-bHe14upVNxyo-Afbwnys-cknzZk3C40QqG-3ltCwyIvu0Mgj5pDqvSNA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/classes/info/4",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"classes",
+								"info",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Negative",
+			"item": [
+				{
+					"name": "Get By ID - ID not exists",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"})\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Class ID Not Exists\", function () {\r",
+									"    pm.expect(jsonData.detailMessage).to.contain(\"The class's id does not exist yet\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW1kdC5pbmZvQGdtYWlsLmNvbSIsImF1dGhvcml0aWVzIjoiUk9MRV9NQU5BR0VSIiwiZXhwIjoxNjg4ODc2MzUwfQ.zuoF8hbjbNBjEWz0Ujhh5neNj5866TTkEklyR4UyFcyIKyVnbPKtr9S8gcIesrXDtqQQhXBpKkiJyNphRyVw1Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/classes/info/0",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"classes",
+								"info",
+								"0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

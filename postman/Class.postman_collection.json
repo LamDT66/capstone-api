@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "5b9ec127-3f52-4961-b7fd-5fcb12923c2d",
+		"name": "Class",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3802039"
+	},
+	"item": [
+		{
+			"name": "Positive",
+			"item": [
+				{
+					"name": "View List Class",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/classes",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"classes"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "SE1510",
+									"disabled": true
+								},
+								{
+									"key": "subjectId",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "semesterId",
+									"value": "7",
+									"disabled": true
+								},
+								{
+									"key": "facultyId",
+									"value": "9",
+									"disabled": true
+								},
+								{
+									"key": "teacherId",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "INACTIVE",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/classes/4",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"classes",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"SE1520\",\r\n    \"code\": \"SE1520\",\r\n    \"startDate\": \"2023-08-23\",\r\n    \"endDate\": \"2024-01-23\",\r\n    \"submitDate\": \"2024-02-23\",\r\n    \"teachers\": [\r\n        {\r\n            \"fullName\": \"PHAN NGOC LINH\",\r\n            \"email\": \"phanngoclinh@gmail.com\"\r\n        }\r\n    ],\r\n    \"status\": null,\r\n    \"semesterName\": \"FALL\",\r\n    \"subjectName\": \"SWP491\",\r\n    \"facultyName\": \"DIGITAL MARKETING\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/classes",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"classes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

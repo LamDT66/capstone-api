@@ -1,0 +1,676 @@
+{
+	"info": {
+		"_postman_id": "d15470fe-d0c2-467a-94cc-e2466b4eae8d",
+		"name": "cpms-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23719170"
+	},
+	"item": [
+		{
+			"name": "authentication",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"whagenes@example.net\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/auth/login",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2dWhhaWFuaEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfU1RVREVOVCIsImV4cCI6MTY5MDAwNTg4NX0.zk6iDYL7pCWL_-gBIjhMB0nbRvgYkVOnmYqWleAoPYoRS6ddekvethIkvPjxXg0aiq1D9cgzlUhKN4sTkb4CDA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{Host}}/logout",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Vu Hai Anh\",\r\n    \"email\": \"chanhsiro1412@gmail.com\",\r\n    \"password\": \"chanhsiro\",\r\n    \"confirmPassword\": \"chanhsiro\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/auth/register",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "confirm-account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/auth/confirm-account?token=267444611035&fullName=Vu%20Hai%20Anh",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"auth",
+								"confirm-account"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "267444611035"
+								},
+								{
+									"key": "fullName",
+									"value": "Vu%20Hai%20Anh"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change-password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2dWhhaWFuaEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfU1RVREVOVCIsImV4cCI6MTY5MDAwNTg4NX0.zk6iDYL7pCWL_-gBIjhMB0nbRvgYkVOnmYqWleAoPYoRS6ddekvethIkvPjxXg0aiq1D9cgzlUhKN4sTkb4CDA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"admin\",\r\n    \"newPassword\": \"chanhsiro2\",\r\n    \"confirmPassword\": \"chanhsiro2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/user/change-password",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"user",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"chanhsiro1412@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/auth/reset-password",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "confirm-otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"otp\": \"570475\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/auth/confirm-otp",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"auth",
+								"confirm-otp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "Get Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2dWhhaWFuaEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfU1RVREVOVCIsImV4cCI6MTY5MDM4ODAyNX0.GNJzSPYn4ltllv306jnmg3TvAV6L9gsHShUlApVnXY5KGeXvaErfrFqh7wzI_wv3hMNHvzGQfJkfMhc7sJSVtw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"vuhaianh@gmail.com\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/user/profile",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtZWxpc3NhLmRhY2hAZXhhbXBsZS5vcmciLCJhdXRob3JpdGllcyI6IlJPTEVfQURNSU4iLCJleHAiOjE2ODk3NDI1NzZ9.l3vmHndi9lRzl6a7M7Xlm2djTQZ931QqaYsA7ObI_JUTaT7QVSSZNJDaqgGfotbLZlMRdwTi4PsHurfUGyhgNA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"FRANCESCA BUCKRIDGE V\",\r\n    \"mobile\": \"433-074-3968x7411\",\r\n    \"gender\": \"MALE\",\r\n    \"avatar\": null,\r\n    \"facultyId\": 12\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/user/update-profile",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"user",
+								"update-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-students",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ3aGFnZW5lc0BleGFtcGxlLm5ldCIsImF1dGhvcml0aWVzIjoiUk9MRV9URUFDSEVSIiwiZXhwIjoxNjkwOTA3MDMzfQ.1OeHEHfCWtw4S0xh1qX4t3LPE94vbcNmpKail-M3yHWhGxOWe9Dkfi4uq9-gPW0xiU6-7EnMBuqXl_1wvAOrag",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/user/students",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"user",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-teachers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ3aGFnZW5lc0BleGFtcGxlLm5ldCIsImF1dGhvcml0aWVzIjoiUk9MRV9URUFDSEVSIiwiZXhwIjoxNjkwOTA3MDMzfQ.1OeHEHfCWtw4S0xh1qX4t3LPE94vbcNmpKail-M3yHWhGxOWe9Dkfi4uq9-gPW0xiU6-7EnMBuqXl_1wvAOrag",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/user/teachers",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"user",
+								"teachers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-managers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ3aGFnZW5lc0BleGFtcGxlLm5ldCIsImF1dGhvcml0aWVzIjoiUk9MRV9URUFDSEVSIiwiZXhwIjoxNjkwOTA3MDMzfQ.1OeHEHfCWtw4S0xh1qX4t3LPE94vbcNmpKail-M3yHWhGxOWe9Dkfi4uq9-gPW0xiU6-7EnMBuqXl_1wvAOrag",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/user/students",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"user",
+								"students"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "class",
+			"item": [
+				{
+					"name": "class-list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ3aGFnZW5lc0BleGFtcGxlLm5ldCIsImF1dGhvcml0aWVzIjoiUk9MRV9URUFDSEVSIiwiZXhwIjoxNjkwNjMwNzUwfQ.s4c0KW2VUirfuzMLvAyBNDgw-spavn6Gt0zsHpdBPx4HqYKLiBQZcINzkU7dYwCeJijsQjwgJXPGa7lkS7Qu4g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/classes/list",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"classes",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "test",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2dWhhaWFuaEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfTUFOQUdFUiIsImV4cCI6MTY4OTA0NjkzN30.X8nyIVm6hXItZQQ8EuNumnj6Yfs09Wn_Vy8v4s1DWQA8_bSvrDHafOsvn1QGSZq4_k7zq5vJzaDZg7rFoHpEOw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/class/test",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"class",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-class",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2dWhhaWFuaEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfU1RVREVOVCIsImV4cCI6MTY4OTA3MjUzM30.wLjl8DQf4nQInF-vBoBOSpSZPz02TtkicsNS629TrD2R_qF-IBBw9bAws-X54ginOpLagyGU3gS_M8UzZ_oIUw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"SE1112\",\r\n    \"startDate\": null,\r\n    \"endDate\": null,\r\n    \"sumbitDate\": null,\r\n    \"notificationSent\": false,\r\n    \"subjectId\": 2,\r\n    \"semesterId\": 2,\r\n    \"managerId\": 9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/class/create-class",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"class",
+								"create-class"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-class",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2dWhhaWFuaEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfU1RVREVOVCIsImV4cCI6MTY4OTA4ODY4MX0.a-aklCUpUyVO0Ls_awEPmyWIn--rMLsH3vsbvcBb5lr2zW2p5MUUl4jxEJHE_dMrpep2VUhnK5ImvYAGceh3gg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"SE2222\",\r\n    \"startDate\": null,\r\n    \"endDate\": null,\r\n    \"sumbitDate\": null,\r\n    \"notificationSent\": false,\r\n    \"subjectId\": 2,\r\n    \"semesterId\": 2,\r\n    \"managerId\": 9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/class/update-class",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"class",
+								"update-class"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-class",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2dWhhaWFuaEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfU1RVREVOVCIsImV4cCI6MTY4OTA4ODY4MX0.a-aklCUpUyVO0Ls_awEPmyWIn--rMLsH3vsbvcBb5lr2zW2p5MUUl4jxEJHE_dMrpep2VUhnK5ImvYAGceh3gg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/class/delete-class/15",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"class",
+								"delete-class",
+								"15"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "project",
+			"item": [
+				{
+					"name": "project-list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2dWhhaWFuaEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfU1RVREVOVCIsImV4cCI6MTY5MDAwNjIxN30.MF_ebiG6w-uNB3DqV4skVHD2zwUfwY__zROnwRANFl-8EesrHWAylRijF0SniuC_djKoWh4IgkVWxOdiZV3IDg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/projects/project-list",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"projects",
+								"project-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "project-import",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ3aGFnZW5lc0BleGFtcGxlLm5ldCIsImF1dGhvcml0aWVzIjoiUk9MRV9URUFDSEVSIiwiZXhwIjoxNjkwODE3MzUxfQ.pTD5NVwV4cf2V4hKrFmB1dPLhdWmwTl2g9eltUSRrEVn6s-X8bpu7viaYvCqpRdhEnlOPkgZp21wWm1jt1vSKg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/CHANHSIRO/Downloads/cpms-import-project.xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Host}}/projects/import",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"projects",
+								"import"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-project",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtZWxpc3NhLmRhY2hAZXhhbXBsZS5vcmciLCJhdXRob3JpdGllcyI6IlJPTEVfTUFOQUdFUiIsImV4cCI6MTY4OTg2OTQzMn0.zror1x8k4-KeVkZhq_PBEdLfrOw6QB5uZFN171vLgUr0wmxDcLyH5vKc7AwaDaXuXC5hF4WC81CkJxHSgfypqw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"groupName\": \"G1000\",\r\n    \"projectCode\": \"ABCDE\",\r\n    \"englishName\": \"Project management\",\r\n    \"vietnameseName\": \"Quan ly du an\",\r\n    \"estimateEffort\": 20,\r\n    \"status\": \"ACTIVE\",\r\n    \"note\": \"Group 15\",\r\n    \"classId\": 4,\r\n    \"leaderId\": 88,\r\n    \"mentorId\": 16,\r\n    \"coMentorId\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/projects/create-project",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"projects",
+								"create-project"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "subject",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

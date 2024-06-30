@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "4833aef9-e952-4e02-b72c-71281447f04e",
+		"name": "Project Milestone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26803583"
+	},
+	"item": [
+		{
+			"name": "Positive",
+			"item": [
+				{
+					"name": "View List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYWluZ29jbGluaEBnbWFpbC5jb20iLCJleHAiOjE2OTI1NDk2MDZ9.7Z4bnkkrTnEvyggbkEeZDFqk83OHXVMKvfaDUOXdoNfyJ2HKv6zgpZ0zEtThoDvhZ4SBftF7f-xSh8o07ppLTg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{Host}}/project-milestones/project/1?page=1&size=11",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"project-milestones",
+								"project",
+								"1"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYWluZ29jbGluaEBnbWFpbC5jb20iLCJleHAiOjE2OTI1MzM4NjB9.VKvR6XyHfbz09QIgx1qJo8UnxxYSDsAKWgYS_wZLWSGoEsDq4TiSnITBgLdXBb-ZS_rHPQ93ZChx8tvQQtJslg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/project-milestones/1",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"project-milestones",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Title Exists",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZ3V5ZW5uZ29jbGluaEBnbWFpbC5jb20iLCJleHAiOjE2OTI1NDI5NDN9.IUq0E61CgWlbw2_cFPXFaRRg4GoB3ZIsPQMgEhU4B7WOf2Q1iGeoYsSNGOivEwegaVil5jFfS7VMZ39B801_Ig",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/project-milestones/title/exists?name=report 1",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"project-milestones",
+								"title",
+								"exists"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "report 1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYWluZ29jbGluaEBnbWFpbC5jb20iLCJleHAiOjE2OTI1MTM4OTl9.7EStDhCk4rqDnn9xHt_d8cqMCsETijAmbOf_8vvidj9t-k_I-e_65qy3dqOxSgW4Xvo5rcoCsXCHOpUbEMJflg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"AAAAAA\",\r\n    \"startDate\": \"2023-08-23\",\r\n    \"endDate\": \"2023-09-23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/project-milestones/project/1",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"project-milestones",
+								"project",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYWluZ29jbGluaEBnbWFpbC5jb20iLCJleHAiOjE2OTI0NjA2MjJ9.EOEtvWzTlGQOy-3tqeYl-9nxDarL7kjUpKjn4nwvseGJ13_ZUCiCcxvn7f44At2gvB6bjM1llVUpQoznG3Q0hw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"settingType\": \"TYPE\",\r\n    \"settingName\": \"Q&A\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/project-settings/31/project/1",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"project-settings",
+								"31",
+								"project",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYWluZ29jbGluaEBnbWFpbC5jb20iLCJleHAiOjE2OTI1MDAxOTR9.HCSlYNt0AtloFf4P9QhWTIVmFP82xDSmF7V_28BZiP5B_IgyTsH3Z6FCtjjkwBNUB6hempxRTayLtbTc3eLguQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/project-milestones/14",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"project-milestones",
+								"14"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

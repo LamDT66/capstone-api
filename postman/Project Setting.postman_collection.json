@@ -1,0 +1,343 @@
+{
+	"info": {
+		"_postman_id": "26186fcf-d368-483f-b18e-023cd41ae0b2",
+		"name": "Project Setting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26803583"
+	},
+	"item": [
+		{
+			"name": "Positive",
+			"item": [
+				{
+					"name": "View List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYWluZ29jbGluaEBnbWFpbC5jb20iLCJleHAiOjE2OTI0NTY1MjJ9.YSGJjOKwlksAJAg7KVqLNVrdE4EgiOFzQLl5scz1oj2OdrNVrMi9lFp4rncepZHj8jYdROhfW7NMkvwzGawJow",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{Host}}/project-settings/project/1?page=1&size=11",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"project-settings",
+								"project",
+								"1"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View List Of Types",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZ3V5ZW5uZ29jbGluaEBnbWFpbC5jb20iLCJleHAiOjE2OTIzNzY4ODh9.4kpW2EENWxJWcpGvYBME3TiJ81ZVCeBFoG7grRdCPGaDZPYg2Bwh6leE-bfANrrrW6Kr0tW82LMpsdo2SUl-Fg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{Host}}/project-settings/type",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"project-settings",
+								"type"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYWluZ29jbGluaEBnbWFpbC5jb20iLCJleHAiOjE2OTI1NDkxMzd9.a0vUXkDwAEwjWFnr6Vz5H8emK65DPRlMJwAY6WdgNKoKeUFlWwlwbu8uYHjpWFBuoXlXPoV9lfm9QiZqNYygIQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/project-settings/1",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"project-settings",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Name Exists",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYWluZ29jbGluaEBnbWFpbC5jb20iLCJleHAiOjE2OTI1NTA5OTd9.NcvyKaVig-9XSvk62CR36SmdECP2ToZjJrToyaSKoEL3N8WcPut_tIYQeTusTARRNsSNLqGksCsSWKHNQeVurA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/project-settings/exist/project/1?name=rulee",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"project-settings",
+								"exist",
+								"project",
+								"1"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "rulee"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYWluZ29jbGluaEBnbWFpbC5jb20iLCJleHAiOjE2OTI0NTk4Mzh9.ewA0vT-oxZmB5Vbfi3nqiFt8rHpl0ycT2mOs5gy0huDZyL4tfDI9RxrEK2LdlJbJQAAFqi-4XCJzh1EVzdmA9w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"settingType\": \"TYPE\",\r\n    \"settingName\": \"Q&Q\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/project-settings/project/1",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"project-settings",
+								"project",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYWluZ29jbGluaEBnbWFpbC5jb20iLCJleHAiOjE2OTI0NjA2MjJ9.EOEtvWzTlGQOy-3tqeYl-9nxDarL7kjUpKjn4nwvseGJ13_ZUCiCcxvn7f44At2gvB6bjM1llVUpQoznG3Q0hw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"settingType\": \"TYPE\",\r\n    \"settingName\": \"Q&A\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/project-settings/31/project/1",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"project-settings",
+								"31",
+								"project",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYWluZ29jbGluaEBnbWFpbC5jb20iLCJleHAiOjE2OTI0NjQxNTB9.xKcHNUG8b0v7pN8PCU47pIEIaFRZgTiAMsa5BxDoUQBjg_Qzn0-z9NmuS5lHU4JuMFN9xUHj6_oB60pi1J1cqA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/project-settings/39",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"project-settings",
+								"39"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

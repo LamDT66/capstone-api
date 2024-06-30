@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "8431168b-beb0-42d3-9c46-3ba54ec6dc55",
+		"name": "Report",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26803583"
+	},
+	"item": [
+		{
+			"name": "Positive",
+			"item": [
+				{
+					"name": "Get assigned projects select",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjaHVtaW5ocGh1b25nQGdtYWlsLmNvbSIsImV4cCI6MTY5NTgwMzkwMH0.2RLxc2PybWyxR0JUFeUvmjXe5Bxc4hxxkhTeinnmpfBJ4BPt-bovzGXIBjYuiNUmx512hw4HTqI20L0qgoNCsw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{Host}}/projects/assigned-projects",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"projects",
+								"assigned-projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View report's details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjaHVtaW5ocGh1b25nQGdtYWlsLmNvbSIsImV4cCI6MTY5NTgwMzAwMX0.ciA7uPa90IXYqvOVqyIjegE1pbVMtx-9AWVumqjbokUGH8VmNcSXzhzu6S6lG3D2DWElR5Mud9j3zSE_ZI61dw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{Host}}/reports/2",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"reports",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View list report",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjaHVtaW5ocGh1b25nQGdtYWlsLmNvbSIsImV4cCI6MTY5NTgwNTc1Nn0.NX8rv3ep97T21KzyMmVfyh5f4rPWiHMdEi3bB0790fKrA9JJFbo1fofJibPoZSkxsgSMpvVbUt42Ky8Bi_0jJw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{Host}}/reports",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"reports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send report",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjaHVtaW5ocGh1b25nQGdtYWlsLmNvbSIsImV4cCI6MTY5NTc1ODQxOX0.lTUxRvx3RNdbi4SvCf0Z6h_VW5gT6cTIYRZA-M1C4XVPIKN0yYSGucd8SJCcU9to7yicODvb-mlxpK2V2382Yw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"projectId\": 2,\r\n    \"milestoneId\": 2,\r\n    \"fileUrl\": \"url\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/reports",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"reports"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,385 @@
+{
+	"info": {
+		"_postman_id": "8b9b08c9-3714-440f-a1c7-59d463b61fd5",
+		"name": "Issue",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23719170"
+	},
+	"item": [
+		{
+			"name": "list-issues",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjaHVtaW5ocGh1b25nQGdtYWlsLmNvbSIsImV4cCI6MTY5MTczODY5MX0.o8Rwt_GD1HTc0Gelu58zFkNQSLkeSVWaMHYl2XDxOljZ0Kb5v-BdSBBNzTU45JBFrVrm-nUbO4qQos_9N9Tg2w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Host}}/issues/project/1",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"issues",
+						"project",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-issue-by-id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjaHVtaW5ocGh1b25nQGdtYWlsLmNvbSIsImV4cCI6MTY5MTczOTk1OX0.0SzaVesGANugpNhAOth2NbFXjfG197a5DKc5tEJxlqtJlQuTer_dfrwZM4CcWmtfut3iLarOAxh8B1Gg77tk1A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Host}}/issues/8",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"issues",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-issue",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkYW5nbWluaHBodW9uZ0BnbWFpbC5jb20iLCJleHAiOjE2OTE3NDUyNzF9.T2u732KTUQ4NdIXLwSM7xfKQ-Ahy1gkUUEsGaW49ZZWfQzY7Awi7ofcGvJuYz3U2S1kB1lNIjEAosRtGXAex2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"fix length of setting form\",\r\n    \"description\": \"fix length of setting name with min length = 3, max length = 50\",\r\n    \"typeId\": 18,\r\n    \"actualEffort\": 2,\r\n    \"milestoneId\": 11,\r\n    \"processId\": 14,\r\n    \"statusId\": 15,\r\n    \"assigneeId\": 22\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Host}}/issues",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"issues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-issue",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjaHVtaW5ocGh1b25nQGdtYWlsLmNvbSIsImV4cCI6MTY5MTc0NTM3N30.UsKUCLo3CEASuN8CIj07JBSFszz2woslzoIQCnfpKpCZbqJjkt4jnzDxWWoZQdKz_8k0LC7dcdJBI5qHHrjVaw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"fix length of setting form\",\r\n    \"description\": \"fix length of setting name with min length = 3, max length = 50\",\r\n    \"typeId\": 18,\r\n    \"actualEffort\": 1,\r\n    \"milestoneId\": 11,\r\n    \"processId\": 14,\r\n    \"statusId\": 15,\r\n    \"assigneeId\": 22\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Host}}/issues/23",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"issues",
+						"23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-issue",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjaHVtaW5ocGh1b25nQGdtYWlsLmNvbSIsImV4cCI6MTY5MTc0NTYxMX0.bUP0jl9Cjo2c20qZVBAnKTNmv0qN9GdbWjuPhjoLNxtQyry41JoupXKgAmkFFub1gPt6JcryU2Ru9GA8RvFxsw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"fix length of setting form\",\r\n    \"description\": \"fix length of setting name with min length = 3, max length = 50\",\r\n    \"typeId\": 18,\r\n    \"actualEffort\": 1,\r\n    \"milestoneId\": 11,\r\n    \"processId\": 14,\r\n    \"statusId\": 15,\r\n    \"assigneeId\": 22\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Host}}/issues/23",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"issues",
+						"23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-type-by-project-id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjaHVtaW5ocGh1b25nQGdtYWlsLmNvbSIsImV4cCI6MTY5MTc0NzQ1MX0.1tdhgL0p90YzBZSB1usW1tpP7pa4t7k1CPrTH-cGlFBWDmgyFXcyxpyzU9m5INmWFwaOFQPMWHoXCs12ZVUqYw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"fix length of setting form\",\r\n    \"description\": \"fix length of setting name with min length = 3, max length = 50\",\r\n    \"typeId\": 18,\r\n    \"actualEffort\": 1,\r\n    \"milestoneId\": 11,\r\n    \"processId\": 14,\r\n    \"statusId\": 15,\r\n    \"assigneeId\": 22\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Host}}/project-settings/project/1/types",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"project-settings",
+						"project",
+						"1",
+						"types"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-status-by-project-id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjaHVtaW5ocGh1b25nQGdtYWlsLmNvbSIsImV4cCI6MTY5MTc0NzQ1MX0.1tdhgL0p90YzBZSB1usW1tpP7pa4t7k1CPrTH-cGlFBWDmgyFXcyxpyzU9m5INmWFwaOFQPMWHoXCs12ZVUqYw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"fix length of setting form\",\r\n    \"description\": \"fix length of setting name with min length = 3, max length = 50\",\r\n    \"typeId\": 18,\r\n    \"actualEffort\": 1,\r\n    \"milestoneId\": 11,\r\n    \"processId\": 14,\r\n    \"statusId\": 15,\r\n    \"assigneeId\": 22\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Host}}/project-settings/project/2/statuses",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"project-settings",
+						"project",
+						"2",
+						"statuses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-process-by-project-id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjaHVtaW5ocGh1b25nQGdtYWlsLmNvbSIsImV4cCI6MTY5MTc0Nzc3Mn0.4ChtQCBgpGsKpFPvraTHt1-PjYKZdas362At9ekccuCUmLfdCJOYJgNtnfHFxjk9PIiKYNKrKtLo1K9lF4jilA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"fix length of setting form\",\r\n    \"description\": \"fix length of setting name with min length = 3, max length = 50\",\r\n    \"typeId\": 18,\r\n    \"actualEffort\": 1,\r\n    \"milestoneId\": 11,\r\n    \"processId\": 14,\r\n    \"statusId\": 15,\r\n    \"assigneeId\": 22\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Host}}/project-settings/project/2/processes",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"project-settings",
+						"project",
+						"2",
+						"processes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-milestone-by-project-id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjaHVtaW5ocGh1b25nQGdtYWlsLmNvbSIsImV4cCI6MTY5MTc0Nzc3Mn0.4ChtQCBgpGsKpFPvraTHt1-PjYKZdas362At9ekccuCUmLfdCJOYJgNtnfHFxjk9PIiKYNKrKtLo1K9lF4jilA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"fix length of setting form\",\r\n    \"description\": \"fix length of setting name with min length = 3, max length = 50\",\r\n    \"typeId\": 18,\r\n    \"actualEffort\": 1,\r\n    \"milestoneId\": 11,\r\n    \"processId\": 14,\r\n    \"statusId\": 15,\r\n    \"assigneeId\": 22\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Host}}/milestones/project/1",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"milestones",
+						"project",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-member-by-project-id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjaHVtaW5ocGh1b25nQGdtYWlsLmNvbSIsImV4cCI6MTY5MTc0ODA4NH0.A1W-gAzXo1UBFvfPyQmy4cUpOtbx46TvDwVXiS0S2KF_wJ_bgHNg6ChyR8Y7Tf4Dg1mLB3KzBzr3l-8n3ZD7EA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"fix length of setting form\",\r\n    \"description\": \"fix length of setting name with min length = 3, max length = 50\",\r\n    \"typeId\": 18,\r\n    \"actualEffort\": 1,\r\n    \"milestoneId\": 11,\r\n    \"processId\": 14,\r\n    \"statusId\": 15,\r\n    \"assigneeId\": 22\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Host}}/project-members/project/2",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"project-members",
+						"project",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

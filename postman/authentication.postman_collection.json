@@ -1,0 +1,305 @@
+{
+	"info": {
+		"_postman_id": "5e096ef5-439f-43ac-bd3f-a085b7887396",
+		"name": "authentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3802039"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"pm.environment.set(\"Token\", jsonData.token);\r",
+							"pm.environment.set(\"RefreshToken\", jsonData.refreshToken);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"email\": \"tranngoclinh@gmail.com\", // admin\r\n    // \"email\": \"nguyenngoclinh@gmail.com\", // manager\r\n    // \"email\": \"phanngoclinh@gmail.com\", // teacher\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Host}}/auth/login",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"pm.environment.set(\"Token\", jsonData.token);\r",
+							"pm.environment.set(\"RefreshToken\", jsonData.refreshToken);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"luuminhkhoi@gmail.com\",\r\n    \"password\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Host}}/auth/refreshToken?refreshToken={{RefreshToken}}",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"auth",
+						"refreshToken"
+					],
+					"query": [
+						{
+							"key": "refreshToken",
+							"value": "{{RefreshToken}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"Vu Hai Anh\",\r\n    \"email\": \"duynn03@gmail.com\",\r\n    \"password\": \"chanhsiro\",\r\n    \"confirmPassword\": \"chanhsiro\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Host}}/auth/register",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "confirm-account",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Host}}/auth/confirm-account?token=be2d12c4-ab76-4822-8504-c412cca4b2d7",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"auth",
+						"confirm-account"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "be2d12c4-ab76-4822-8504-c412cca4b2d7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change-password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"oldPassword\": \"123456\",\r\n    \"newPassword\": \"1234567\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Host}}/auth/change-password",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"auth",
+						"change-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Old Password Match",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept-encoding": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Host}}/auth/old-password-match?oldPassword=123456",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"auth",
+						"old-password-match"
+					],
+					"query": [
+						{
+							"key": "oldPassword",
+							"value": "123456"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reset-password-otp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"duynn03@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Host}}/auth/reset-password-otp",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"auth",
+						"reset-password-otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check reset-password-otp exists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Host}}/auth/reset-password-otp/exists?otp=262888",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"auth",
+						"reset-password-otp",
+						"exists"
+					],
+					"query": [
+						{
+							"key": "otp",
+							"value": "262888"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reset-password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"otp\": \"262888\",\r\n    \"newPassword\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Host}}/auth/reset-password",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"auth",
+						"reset-password"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

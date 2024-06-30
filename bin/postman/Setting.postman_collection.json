@@ -1,0 +1,775 @@
+{
+	"info": {
+		"_postman_id": "b35e3d39-80c4-4f38-9b64-ccb029aeb98a",
+		"name": "Setting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26803583",
+		"_collection_link": "https://bold-station-475313.postman.co/workspace/CPMS~86a07866-592e-4d1c-b45f-82b483043072/collection/26803583-b35e3d39-80c4-4f38-9b64-ccb029aeb98a?action=share&creator=26803583&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Positive",
+			"item": [
+				{
+					"name": "View List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW1kdEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfQURNSU4iLCJleHAiOjE2ODc2MDUxOTd9.Dva1jZclFupMBgFXO62g5BqGl12hw89KKOHkapZU5NcjryrCOWZ1YMi_3eWGok5qCRS7_dmE8S3NYsdbQdhCzg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{Host}}/settings?page=1&size=3",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"settings"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View List Of Types",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW1kdEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfQURNSU4iLCJleHAiOjE2ODczMjEyNjB9.izyxCRM2DI946NakjjyVMjJwZqAM1ZLieF99XDERQQPnk3BZK4ktx3DdjHpGVF3g5Xseb0pK4fbePfl5b-zqVQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{Host}}/settings/settingTypes",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"settings",
+								"settingTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View List Of Roles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW1kdEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfQURNSU4iLCJleHAiOjE2ODczNDE3Njl9.4f5PBS_zgTKOwHkmCHo6D2lhpJRXyDuUKNnkimmrj7ARRwPRa8vR8Ky4Gu8t_ttdBTLSpNIRniDeEloIMzf5ng",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{Host}}/settings/userRoles",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"settings",
+								"userRoles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW1kdEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfQURNSU4iLCJleHAiOjE2ODczNDI3MjZ9.2GxVJ4tA8rX4lDoaSuyrNTl-cKppvvJDMfHz1m83Y4AT_sGVCVO00QQcq0lGCvIY-TY1fM1bgwJ0QbYkeb9zQg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/settings/1",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"settings",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Name Exists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/settings/settingName?name=ADMIN",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"settings",
+								"settingName"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "ADMIN"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW1kdEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfQURNSU4iLCJleHAiOjE2ODcyNTYxNzV9.2ICnEwNSXX7skmgPlwv_T2Xma_So6NvduUKnwhyuTz3DZdzwag3HNdgfdaw80FE7iv0yZgZc6qNK_M0Qwm1ueQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"settingType\": \"SEMESTER\",\r\n    \"settingName\": \"S\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/settings",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW1kdEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfQURNSU4iLCJleHAiOjE2ODcyNDAyMTl9.r3XWhnqpYVnAlJEo-RU9kXO8kShGkeZCI1gcN4Qw9O1Me7hcYQfOoV533Vv13fVZfgZOQPoQExzXQb7NTcJL7Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"settingType\": \"SEMESTER\",\r\n    \"settingName\": \"FALL 1900123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/settings/2",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"settings",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW1kdEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfQURNSU4iLCJleHAiOjE2ODcyMzk5NDB9.T7wKQR5dkWBzGyM_8lKj2r5VIl2P7yxjGEQzYKcRxlHbIz7lWBuDXvvIC4gWHWK5vN5mHCBEvgdcVe6C0qjuHw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/settings/2",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"settings",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/settings/search?query=23",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"settings",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "23"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Negative",
+			"item": [
+				{
+					"name": "Get By ID - ID not exists",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"})\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Setting ID Not Exists\", function () {\r",
+									"    pm.expect(jsonData.detailMessage).to.contain(\"The setting's id does not exist yet\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW1kdEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfQURNSU4iLCJleHAiOjE2ODczNDMzNDR9.XvJFEVWN35bE-axMKYAWrVmrnKuqIfvwc08z0sCosQAKmlP4zGkBn2ISVQG00swVDyONYSEEdFEFQZKQL8Z5fw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/settings/0",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"settings",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create - Name exists",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"})\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Setting Name Not Exists\", function () {\r",
+									"    pm.expect(jsonData.detailMessage).to.contain(\"The setting's name already exists\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW1kdEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfQURNSU4iLCJleHAiOjE2ODcyNjE4MzR9.sdEnAg2uEHntSvSlcFF0r-efU_5G428TJvrD5ecpVcneAE6AGHz5_Y2qe9Q3d9A6BMoex0Rhg5maCxC3X7yiqQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"settingType\": \"ROLE\",\r\n    \"settingName\": \"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/settings",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create - Name empty",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"})\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Setting Name Not Empty\", function () {\r",
+									"    pm.expect(jsonData.detailMessage).to.contain(\"The setting's name must not be empty\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW1kdEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfQURNSU4iLCJleHAiOjE2ODczNDMzNDR9.XvJFEVWN35bE-axMKYAWrVmrnKuqIfvwc08z0sCosQAKmlP4zGkBn2ISVQG00swVDyONYSEEdFEFQZKQL8Z5fw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"settingType\": \"ROLE\",\r\n    \"settingName\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/settings",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update - ID not exists",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"})\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Setting ID Not Exists\", function () {\r",
+									"    pm.expect(jsonData.detailMessage).to.contain(\"The setting's id does not exist yet\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW1kdEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfQURNSU4iLCJleHAiOjE2ODczNDMzNDR9.XvJFEVWN35bE-axMKYAWrVmrnKuqIfvwc08z0sCosQAKmlP4zGkBn2ISVQG00swVDyONYSEEdFEFQZKQL8Z5fw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"settingType\": \"ROLE\",\r\n    \"settingName\": \"S\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/settings/0",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"settings",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update - Name exists",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"})\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Setting Name Not Exists\", function () {\r",
+									"    pm.expect(jsonData.detailMessage).to.contain(\"The setting's name already exists\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW1kdEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfQURNSU4iLCJleHAiOjE2ODczNDMzNDR9.XvJFEVWN35bE-axMKYAWrVmrnKuqIfvwc08z0sCosQAKmlP4zGkBn2ISVQG00swVDyONYSEEdFEFQZKQL8Z5fw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"settingType\": \"SEMESTER\",\r\n    \"settingName\": \"FALL 2021\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/settings/5",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"settings",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update - Name empty",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"})\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Setting Name Not Empty\", function () {\r",
+									"    pm.expect(jsonData.detailMessage).to.contain(\"The setting's name must not be empty\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW1kdEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfQURNSU4iLCJleHAiOjE2ODczNDMzNDR9.XvJFEVWN35bE-axMKYAWrVmrnKuqIfvwc08z0sCosQAKmlP4zGkBn2ISVQG00swVDyONYSEEdFEFQZKQL8Z5fw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"settingType\": \"ROLE\",\r\n    \"settingName\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/settings/5",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"settings",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete - ID Not exists",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"HTTP Status is 200\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"})\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Setting ID Not Exists\", function () {\r",
+									"    pm.expect(jsonData.detailMessage).to.contain(\"The setting's id does not exist yet\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW1kdEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfQURNSU4iLCJleHAiOjE2ODczNDMzNDR9.XvJFEVWN35bE-axMKYAWrVmrnKuqIfvwc08z0sCosQAKmlP4zGkBn2ISVQG00swVDyONYSEEdFEFQZKQL8Z5fw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/settings/99999",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"settings",
+								"99999"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
